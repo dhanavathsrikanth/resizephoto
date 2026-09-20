@@ -1,0 +1,23 @@
+# deps
+node_modules/
+
+# build output
+dist/
+
+# logs
+*.log
+vite-server.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# env
+.env
+.env.*
+!.env.example
+
+# editor
+.vscode/
+.idea/

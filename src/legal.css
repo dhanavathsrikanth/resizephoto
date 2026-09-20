@@ -1,0 +1,29 @@
+/* Legal pages — matches main design tokens in styles.css */
+.legal-wrap{max-width:880px;margin:0 auto;padding:56px 28px 96px}
+.legal-crumb{display:flex;align-items:center;gap:10px;margin-bottom:22px;color:var(--muted);font-size:12px;font-weight:600}
+.legal-crumb a{color:var(--blue)}
+.legal-card{border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+.legal-head{padding:34px 36px 26px;border-bottom:1px solid var(--line);background:#fbfbff}
+.legal-head .eyebrow{margin:0 0 10px}
+.legal-head h1{margin:0 0 10px;font-size:clamp(28px,4vw,40px);letter-spacing:-.05em;line-height:1.1}
+.legal-head p{margin:0;color:var(--muted);font-size:13px;max-width:62ch}
+.legal-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.legal-meta span{border:1px solid var(--line);border-radius:20px;background:#fff;padding:5px 11px;color:var(--muted);font:500 10px 'DM Mono',monospace}
+.legal-body{padding:10px 36px 36px}
+.legal-body h2{margin:30px 0 8px;font-size:19px;letter-spacing:-.03em}
+.legal-body h2 span{color:var(--blue);font:500 11px 'DM Mono',monospace;margin-right:8px}
+.legal-body p,.legal-body li{color:#33334d;font-size:14px;line-height:1.65}
+.legal-body ul{padding-left:20px;margin:8px 0}
+.legal-body li{margin:6px 0}
+.legal-note{margin:22px 0;padding:14px 16px;border-radius:10px;background:var(--pale);border:1px solid #d7d8eb;color:#33334d;font-size:13px}
+.legal-note strong{color:var(--navy)}
+.legal-toc{margin:22px 0 0;padding:16px;border:1px dashed #aaabd9;border-radius:12px;background:#fff}
+.legal-toc strong{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-family:'DM Mono',monospace}
+.legal-toc ol{margin:10px 0 0;padding-left:20px;color:var(--muted);font-size:13px}
+.legal-toc li{margin:4px 0}
+.legal-toc a:hover{color:var(--blue);text-decoration:underline}
+.legal-foot{display:flex;flex-wrap:wrap;gap:10px;padding:0 36px 34px}
+.legal-foot a{padding:11px 16px;border:1px solid #d7d8eb;border-radius:7px;background:#fff;color:var(--navy);font-size:12px;font-weight:700}
+.legal-foot a:hover{border-color:var(--blue);color:var(--blue);background:var(--pale)}
+.legal-foot a.primary2{background:var(--blue);border-color:var(--blue);color:#fff}
+@media(max-width:800px){.legal-wrap{padding:36px 16px 64px}.legal-head,.legal-body,.legal-foot{padding-left:20px;padding-right:20px}}

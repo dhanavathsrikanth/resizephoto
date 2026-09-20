@@ -1,0 +1,6 @@
+/* Practical guide content uses a denser, easier-to-scan type scale. */
+.rules-intro h2{font-size:clamp(28px,3.4vw,39px)}
+.rules-intro p{max-width:360px;font-size:13px;line-height:1.65}
+.rule-cards h3{font-size:19px}
+.rule-cards article>p{font-size:12px;line-height:1.65}
+.rule-cards dl div{font-size:12px}
