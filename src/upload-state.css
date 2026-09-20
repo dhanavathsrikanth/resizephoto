@@ -1,0 +1,3 @@
+.tool-shell:has(.canvas-stage:not(.has-image)){grid-template-columns:1fr}
+.tool-shell:has(.canvas-stage:not(.has-image)) .editor{display:none}
+.tool-shell:has(.canvas-stage:not(.has-image)) .tool-sidebar{border-right:0}

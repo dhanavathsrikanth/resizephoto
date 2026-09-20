@@ -1,0 +1,23 @@
+# ResizePhoto.online — GATE image desk
+
+> Free browser-based GATE 2027 photo and signature resizer. Crop, resize, convert and check JPG images against IIT Madras pixel, ratio and KB requirements. All processing happens locally in the browser — images are never uploaded.
+
+- Canonical: https://resizephoto.online/gate
+- Official source: https://gate2027.iitm.ac.in/photograph_and_signature
+
+## Requirements (IIT Madras, GATE 2027)
+
+- Photograph: color passport-size, 3.5 x 4.5 cm, white background, frontal face covering 60-70%, aspect ratio 0.66-0.89, 200x260 to 530x690 pixels, 5-600 kB JPG/JPEG.
+- Signature: black or dark-blue ink, JPG/JPEG, aspect ratio R 2.75-3.75 (width/height), signature covering 70-80%, 250x80 to 580x180 pixels, 3-300 kB.
+
+## How to use
+
+1. Upload a JPG, PNG or WebP photograph or signature.
+2. Crop and position with zoom and rotate controls.
+3. Generate a JPG preview, review pixels, aspect ratio and file size, then download.
+
+## FAQs
+
+- Does the tool upload my image? No. Processing happens in your browser using the Canvas API. No account or server upload.
+- Will passing the checks guarantee acceptance? No. Pixels, ratio and file size are measurable automatically. Face position, glare, shadows and handwriting still need visual review.
+- Where do these requirements come from? From the official GATE 2027 Photograph and Signature instructions published by IIT Madras: https://gate2027.iitm.ac.in/photograph_and_signature
