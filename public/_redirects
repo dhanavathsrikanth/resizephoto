@@ -1,4 +1,4 @@
-/*	/users, /gate, and legal pages are one SPA — serve index.html for all routes */
+# /users, /gate, and legal pages are one SPA - serve index.html for all routes
 /privacy	/index.html	200
 /terms	/index.html	200
 /disclaimer	/index.html	200
