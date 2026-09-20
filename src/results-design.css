@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap');
+
+/* A calmer editorial type system: Space Grotesk for decisions, Manrope for reading. */
+body{font-family:'Instrument Sans',Arial,sans-serif;letter-spacing:-.008em}
+button,input,textarea,select{font-family:'Instrument Sans',Arial,sans-serif}
+h1,h2,h3,h4,h5,h6,.brand,.nav-cta,.primary,.secondary,.download,.render-button,.results-title h3{font-family:'Sora','Instrument Sans',Arial,sans-serif}
+.hero h1,.rules-intro h2,.faq h2{letter-spacing:-.065em}
+.tool-sidebar h2,.editor h2,.results-title h3{letter-spacing:-.045em}
+.eyebrow,.section-kicker,.mini-label,.card-label,.tool-sidebar:before,.editor-head:before,.dropzone small,.canvas-caption,.controls label,.pass-pill,.warn-pill,.footer-bottom small{font-family:'DM Mono',monospace;letter-spacing:.08em}
+.answer-first{font-size:0!important;line-height:1.4}
+.answer-first:after{content:'Upload, crop, check, and download — processed privately in your browser.';font:500 12px/1.5 'Instrument Sans',Arial,sans-serif;color:var(--muted)}
+.gate-guide-content{max-width:1180px;margin:0 auto;padding:0 28px 96px}
+.guide-copy{max-width:900px;padding:34px 38px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#fff,#fafbff);box-shadow:var(--shadow)}
+.guide-copy h2{max-width:650px;margin:7px 0 14px;font:700 clamp(27px,3vw,40px)/1.1 'Sora',sans-serif;letter-spacing:-.055em;color:var(--navy)}
+.guide-copy>p{max-width:760px;color:var(--muted);font-size:14px;line-height:1.7}.guide-columns{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:26px 0}.guide-columns article{padding:20px;border:1px solid var(--line);border-radius:11px;background:#fff}.guide-columns h3,.guide-copy>h3{margin:0 0 7px;font:700 17px 'Sora',sans-serif}.guide-columns p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}.guide-copy>ul{display:grid;gap:8px;margin:0 0 21px;padding-left:20px;color:var(--muted);font-size:13px;line-height:1.55}.guide-disclaimer{padding:13px 15px;border-left:3px solid var(--blue);background:var(--pale);font-size:12px!important}.guide-copy .primary{display:inline-flex;margin-top:5px}
+@media(max-width:800px){.gate-guide-content{padding:0 16px 60px}.guide-copy{padding:24px 20px}.guide-columns{grid-template-columns:1fr}}
+.tool-shell:has(.results) .results{position:relative;background:linear-gradient(145deg,#fbfffd 0%,#f3fbf8 100%);border-left-color:#cfe9dc!important}
+.tool-shell:has(.results) .results:after{content:'✓';position:absolute;right:28px;top:26px;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#1b9b76;color:#fff;font:700 22px 'Space Grotesk',sans-serif;box-shadow:0 10px 22px #1b9b7635}
+.tool-shell:has(.results) .results-title{align-items:flex-start;padding-right:55px;margin-bottom:22px}
+.tool-shell:has(.results) .results-title .mini-label{color:#198364;letter-spacing:.16em}
+.tool-shell:has(.results) .results-title h3{font-size:30px;letter-spacing:-.05em;color:#103c32}
+.tool-shell:has(.results) .results-title h3{font-size:0}
+.tool-shell:has(.results) .results-title h3:after{content:'GATE 2027 requirements passed';font-size:30px}
+.tool-shell:has(.results) .results-title>div:after{content:'IIT Madras measurable checks · ready to download';display:block;margin-top:7px;color:#4e786b;font:600 10px 'Instrument Sans',sans-serif;letter-spacing:.02em}
+.tool-shell:has(.results) .pass-pill{padding:8px 11px;border:1px solid #b9e4d2;background:#dcf8eb;color:#147354;font-weight:700}
+.tool-shell:has(.results) .pass-pill{font-size:0}
+.tool-shell:has(.results) .pass-pill:after{content:'✓ All measurable checks passed';font:700 10px 'Instrument Sans',sans-serif}
+.tool-shell:has(.results) .metrics{border-color:#c9e6d9;background:#fff}
+.tool-shell:has(.results) .metric{border-color:#d8eee4;padding:13px}
+.tool-shell:has(.results) .metric strong{font-family:'Space Grotesk',sans-serif;color:#153f35}
+.tool-shell:has(.results) .ok{font-weight:700}
+.tool-shell:has(.results) .human-check{background:#e7f8f0;border:1px solid #c9e8da;color:#476e62}
+.tool-shell:has(.results) .human-check strong{color:#174d3d}
+.tool-shell:has(.results) .download{background:#168c69;box-shadow:0 10px 20px #168c6930}
+.tool-shell:has(.results) .download:hover{background:#0d7054}
+.tool-shell:has(.results) .output-preview{border-color:#bfe2d2;box-shadow:0 12px 28px #1a76521c}
+@media(max-width:800px){
+  .tool-shell:has(.results) .results-title h3:after{font-size:25px}
+  .tool-shell:has(.results) .results:after{right:18px;top:20px;width:36px;height:36px;font-size:18px}
+}

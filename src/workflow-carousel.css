@@ -1,0 +1,72 @@
+/* Guided carousel: one focused stage at a time. */
+.tool-section{overflow-x:visible!important}
+.tool-section .section-kicker{min-width:0!important}
+.tool-shell,
+.tool-shell:has(.canvas-stage:not(.has-image)),
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)),
+.tool-shell:has(.results){
+  width:100%!important;min-width:0!important;max-width:760px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  overflow:hidden!important;
+}
+.tool-shell:has(.canvas-stage:not(.has-image)){
+  display:block!important;
+}
+.tool-shell:has(.canvas-stage:not(.has-image)) .tool-sidebar{
+  display:block;border:0!important;max-width:none;margin:0;
+}
+.tool-shell:has(.canvas-stage:not(.has-image)) .editor{display:none!important}
+
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)){
+  display:block!important;
+}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .tool-sidebar{display:none}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .editor{
+  display:block!important;max-width:none;margin:0;border:0;box-shadow:none;
+}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .editor-head:before{content:'02 · CROP & POSITION'}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .editor-head{padding:20px 24px 14px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .canvas-stage{min-height:330px;padding:20px 16px 12px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .crop-window{width:min(270px,72%)}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .canvas-caption{width:min(270px,72%);padding-top:8px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .controls{gap:9px;padding:12px 20px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .out-settings{flex:1 1 auto;min-width:250px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .preset-chips{gap:5px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .preset-chips button{padding:7px 8px;font-size:10px}
+.tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .render-button{margin-left:auto}
+
+.tool-shell:has(.results){
+  display:block!important;
+}
+.tool-shell:has(.results) .tool-sidebar{display:none}
+.tool-shell:has(.results) .editor{display:block!important;max-width:none;margin:0;border:0;box-shadow:none}
+.tool-shell:has(.results) .editor-head:before{content:'03 · PREVIEW & DOWNLOAD'}
+.tool-shell:has(.results) .canvas-stage,
+.tool-shell:has(.results) .controls,
+.tool-shell:has(.results) .notice{display:none}
+.tool-shell:has(.results) .results{
+  display:block!important;border:0;padding:34px;background:#fff;
+}
+.tool-shell:has(.results) .results:before{display:none}
+#tool:has(.canvas-stage:not(.has-image)) .section-kicker:after{content:'01 · UPLOAD';color:var(--blue);font:600 9px 'DM Mono',monospace;letter-spacing:.12em}
+#tool:has(.canvas-stage.has-image):not(:has(.results)) .section-kicker:after{content:'02 · CROP & POSITION';color:var(--blue);font:600 9px 'DM Mono',monospace;letter-spacing:.12em}
+#tool:has(.results) .section-kicker:after{content:'03 · PREVIEW & DOWNLOAD';color:var(--blue);font:600 9px 'DM Mono',monospace;letter-spacing:.12em}
+
+@media(max-width:800px){
+  .tool-shell:has(.canvas-stage:not(.has-image)),
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)),
+  .tool-shell:has(.results){
+    display:block!important;width:100%;min-width:0;max-width:760px!important;
+  }
+  .tool-shell:has(.results) .results{padding:26px 20px}
+}
+
+@media(max-width:1024px){
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .canvas-stage{min-height:290px}
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .crop-window{width:min(230px,68%)}
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .controls{padding:11px 16px;gap:7px}
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .controls label{font-size:9px}
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .controls input{width:85px}
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .out-settings{flex:1 1 100%;order:5;min-width:0}
+  .tool-shell:has(.canvas-stage.has-image):not(:has(.results)) .render-button{padding:9px 11px!important;font-size:10px!important}
+}

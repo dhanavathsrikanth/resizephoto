@@ -1,0 +1,4 @@
+/* GATE is live; the directory keeps future exam routes visible but inactive. */
+.exam-group:not(.group-0) .exam-card,.group-0 .exam-card:not(:nth-child(5)){pointer-events:none;cursor:default;background:#fff!important;color:#52627a!important;border-color:#dce4ee!important;box-shadow:0 2px 5px #1e3d650d!important;transform:none!important}
+.exam-group:not(.group-0) .exam-card b,.group-0 .exam-card:not(:nth-child(5)) b{opacity:1!important;transform:none!important;color:#8b9ab0!important;font:600 0/1 'DM Mono',monospace!important}
+.exam-group:not(.group-0) .exam-card b:after,.group-0 .exam-card:not(:nth-child(5)) b:after{content:'COMING SOON';font-size:9px}

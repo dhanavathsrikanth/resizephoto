@@ -1,0 +1,20 @@
+/* Keep the same horizontal three-step workspace on narrow screens. */
+@media(max-width:800px){
+  .tool-section{max-width:none;overflow-x:auto;padding-left:12px;padding-right:12px}
+  .tool-section .section-kicker{min-width:980px}
+  .tool-shell,
+  .tool-shell:has(.canvas-stage:not(.has-image)),
+  .tool-shell:has(.results){
+    display:grid!important;
+    grid-template-columns:260px 390px 330px!important;
+    width:980px;min-width:980px;overflow:hidden;
+  }
+  .tool-shell .tool-sidebar{grid-column:1;grid-row:1;border-right:1px solid var(--line);border-bottom:0}
+  .tool-shell .editor{display:contents!important}
+  .tool-shell .editor-head{grid-column:2/4;grid-row:1}
+  .tool-shell .canvas-stage{grid-column:2;grid-row:2;min-height:430px}
+  .tool-shell .controls{grid-column:2;grid-row:3}
+  .tool-shell .notice{grid-column:2;grid-row:4}
+  .tool-shell .results{grid-column:3;grid-row:2/5;border-top:0;border-left:1px solid var(--line)}
+  .tool-shell:not(:has(.results)) .editor:after{grid-column:3;grid-row:2/5;margin:0;border-left:1px solid var(--line);border-radius:0}
+}

@@ -1,0 +1,124 @@
+/* Horizontal, task-focused workflow: upload → crop → preview/download. */
+.tool-shell,
+.tool-shell:has(.canvas-stage:not(.has-image)){
+  display:grid;
+  grid-template-columns:280px minmax(0,1fr);
+  align-items:stretch;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#fff;
+}
+
+/* Preserve the workflow direction on every viewport. Narrow screens can pan
+   across the fixed workspace instead of changing the interaction model. */
+@media(max-width:800px){
+  .tool-section{max-width:none;overflow-x:auto;padding-left:12px;padding-right:12px}
+  .tool-section .section-kicker{min-width:980px}
+  .tool-shell,
+  .tool-shell:has(.canvas-stage:not(.has-image)),
+  .tool-shell:has(.results){
+    display:grid;
+    grid-template-columns:260px 390px 330px;
+    width:980px;min-width:980px;
+    overflow:hidden;
+  }
+  .tool-shell .tool-sidebar{grid-column:1;grid-row:1;border-right:1px solid var(--line);border-bottom:0}
+  .tool-shell .editor{display:contents}
+  .tool-shell .editor-head{grid-column:2/4;grid-row:1}
+  .tool-shell .canvas-stage{grid-column:2;grid-row:2;min-height:430px}
+  .tool-shell .controls{grid-column:2;grid-row:3}
+  .tool-shell .notice{grid-column:2;grid-row:4}
+  .tool-shell .results{grid-column:3;grid-row:2/5;border-top:0;border-left:1px solid var(--line)}
+  .tool-shell:not(:has(.results)) .editor:after{grid-column:3;grid-row:2/5;margin:0;border-left:1px solid var(--line);border-radius:0}
+}
+.tool-shell:has(.canvas-stage:not(.has-image)) .tool-sidebar{
+  border-right:1px solid var(--line);
+  border-bottom:0;
+}
+.tool-shell:has(.canvas-stage:not(.has-image)) .editor{
+  display:block;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.tool-shell:has(.canvas-stage:not(.has-image)) .editor-head:before{content:'02 · CROP & POSITION'}
+.tool-shell:has(.canvas-stage:not(.has-image)) .editor:after{
+  content:'03 · PREVIEW & DOWNLOAD\\A\\AYour finished JPG preview and download button will appear here after you generate the image.';
+  white-space:pre-wrap;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  min-height:115px;margin:0 30px 25px;padding:25px;
+  border:1px dashed #d7d8e7;border-radius:12px;background:#fafaff;
+  color:#9597ad;font:10px/1.6 'DM Mono',monospace;
+}
+.tool-shell:has(.results){
+  grid-template-columns:1fr;
+  background:#fff;
+}
+.tool-shell:has(.results) .tool-sidebar{display:none}
+.tool-shell:has(.results) .editor{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,.85fr);
+  align-items:stretch;
+}
+.tool-shell:has(.results) .editor-head{grid-column:1/-1}
+.tool-shell:has(.results) .canvas-stage{grid-column:1;grid-row:2;min-height:430px}
+.tool-shell:has(.results) .controls{grid-column:1;grid-row:3;align-self:start;flex-wrap:wrap}
+.tool-shell:has(.results) .notice{grid-column:1;grid-row:4}
+.tool-shell:has(.results) .results{
+  grid-column:2;grid-row:2/5;
+  border-top:0;border-left:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:34px;
+}
+.tool-shell:has(.results) .results:before{
+  content:'03 · PREVIEW & DOWNLOAD';
+  display:block;margin-bottom:18px;color:#9a9cb3;
+  font:600 9px 'DM Mono',monospace;letter-spacing:.12em;
+}
+.output-preview{
+  display:block;width:150px;max-height:180px;object-fit:contain;align-self:center;
+  margin:0 auto 22px;border:1px solid var(--line);border-radius:8px;
+  box-shadow:0 10px 24px rgba(30,31,85,.12);background:#fff;
+}
+.crop-window:has(.face-grid):after{
+  content:'';position:absolute;left:17%;right:17%;top:8%;bottom:8%;
+  border:2px solid rgba(255,255,255,.9);border-radius:50%;
+  box-shadow:0 0 0 999px rgba(18,20,58,.16);pointer-events:none;
+}
+.crop-window:has(.face-grid):before{
+  content:'FACE OVAL · 60–70%';position:absolute;z-index:2;top:10px;left:50%;
+  transform:translateX(-50%);padding:5px 8px;border-radius:99px;
+  background:rgba(20,24,64,.72);color:#fff;white-space:nowrap;
+  font:600 8px 'DM Mono',monospace;letter-spacing:.06em;pointer-events:none;
+}
+@media(max-width:800px){
+  .tool-shell,.tool-shell:has(.canvas-stage:not(.has-image)){display:block}
+  .tool-shell:has(.canvas-stage:not(.has-image)) .tool-sidebar{border-right:0;border-bottom:1px solid var(--line)}
+  .tool-shell:has(.results) .editor{display:block}
+  .tool-shell:has(.results) .results{border-left:0;border-top:1px solid var(--line);padding:24px 20px}
+  .tool-shell:has(.results) .canvas-stage{min-height:350px}
+}
+
+/* Final three-column workspace: each stage is a sibling, never a stacked step. */
+@media(min-width:801px){
+  .tool-shell,
+  .tool-shell:has(.canvas-stage:not(.has-image)){
+    display:grid;
+    grid-template-columns:minmax(240px,280px) minmax(360px,1fr) minmax(300px,.82fr);
+    align-items:stretch;
+  }
+  .tool-shell .tool-sidebar{grid-column:1;grid-row:1;border-right:1px solid var(--line);border-bottom:0}
+  .tool-shell .editor{display:contents}
+  .tool-shell .editor-head{grid-column:2/4;grid-row:1}
+  .tool-shell .canvas-stage{grid-column:2;grid-row:2;min-height:430px}
+  .tool-shell .controls{grid-column:2;grid-row:3;align-self:start;flex-wrap:wrap}
+  .tool-shell .notice{grid-column:2;grid-row:4}
+  .tool-shell .results{grid-column:3;grid-row:2/5;border-top:0;border-left:1px solid var(--line);min-width:0}
+  .tool-shell:not(:has(.results)) .editor:after{
+    grid-column:3;grid-row:2/5;align-self:stretch;margin:0;padding:30px;
+    min-height:0;border:0;border-left:1px solid var(--line);border-radius:0;
+  }
+}
