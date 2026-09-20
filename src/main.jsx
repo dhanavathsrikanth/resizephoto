@@ -15,6 +15,7 @@ import './results-design.css';
 import './home-directory.css';
 import './home-state.css';
 import './shared-theme.css';
+import './search-state.css';
 import { LEGAL_PAGES, LEGAL_ORDER, LEGAL_PATHS, LEGAL_UPDATED, LEGAL_CONTACT } from './legal.jsx';
 
 const RULES = {
@@ -99,6 +100,13 @@ function ExamDirectoryPage() {
   ];
   const [query, setQuery] = useState('');
   const filtered = groups.map(group => ({...group, items: group.items.filter(item => item.toLowerCase().includes(query.toLowerCase()))})).filter(group => group.items.length);
+  useEffect(() => {
+    document.querySelectorAll('.exam-card').forEach(card => {
+      const live = card.textContent.includes('GATE 2027');
+      card.classList.toggle('live-tool', live);
+      card.classList.toggle('soon-tool', !live);
+    });
+  }, [query]);
   return <>
     <header className="directory-nav"><a className="directory-brand" href="/" aria-label="ResizePhoto.online home"><span className="directory-logo">▣</span><span>ResizePhoto.online</span></a><nav><a href="#central">Central Exams</a><a href="#state">State Exams</a><a href="#banking">Banking</a><a href="#police">Police</a><a href="#tools">All Tools</a></nav><a className="directory-result" href="#tools">Sarkari Result</a></header>
     <main className="directory-home">

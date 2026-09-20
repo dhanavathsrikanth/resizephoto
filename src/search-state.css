@@ -1,0 +1,7 @@
+/* Search-safe state: GATE remains live even when filtering changes card order. */
+.exam-group .exam-card.live-tool{pointer-events:auto!important;cursor:pointer!important;background:linear-gradient(135deg,#4f2bb8,#673de6)!important;color:#fff!important;border-color:#542bc4!important;box-shadow:0 8px 18px rgba(103,61,230,.2)!important}
+.exam-group .exam-card.live-tool b{opacity:1!important;transform:none!important;color:#fff!important;font-size:inherit!important;font-family:'Sora','Instrument Sans',sans-serif!important}
+.exam-group .exam-card.live-tool b:after{content:''!important}
+.exam-card.soon-tool{pointer-events:none!important;cursor:default!important;background:#fff!important;color:#52627a!important;border-color:#dce4ee!important;box-shadow:0 2px 5px rgba(30,61,101,.05)!important;transform:none!important}
+.exam-card.soon-tool b{opacity:1!important;transform:none!important;color:#8b9ab0!important;font:600 0/1 'DM Mono',monospace!important}
+.exam-card.soon-tool b:after{content:'COMING SOON';font-size:9px}
