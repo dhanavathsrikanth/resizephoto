@@ -1,0 +1,41 @@
+/* Shared ResizePhoto design system across directory, tool, legal and guide pages. */
+:root{
+  --navy:#1d1e20;
+  --blue:#673de6;
+  --pale:#f2efff;
+  --line:#e4e1f1;
+  --muted:#686879;
+  --green:#168c69;
+  --shadow:0 12px 28px rgba(27,58,101,.10);
+}
+body{font-family:'Instrument Sans',Arial,sans-serif;background:#f7f9fc;color:var(--navy)}
+h1,h2,h3,h4,h5,h6,.brand,.directory-brand,.directory-result,.nav-cta,.primary,.secondary,.download,.render-button{font-family:'Sora','Instrument Sans',Arial,sans-serif}
+a{color:inherit}
+.topbar{border-bottom-color:var(--line);background:rgba(255,255,255,.94)}
+.brand-mark{background:var(--blue)}
+.topbar nav a:hover,.secondary:hover{border-color:#aac5ec;background:var(--pale);color:var(--blue)}
+.nav-cta,.primary,.download{background:var(--blue);box-shadow:0 8px 18px rgba(103,61,230,.22)}
+.nav-cta:hover,.primary:hover,.download:hover{background:#5028c6}
+.hero-card{background:linear-gradient(135deg,#4f2bb8,#673de6);box-shadow:0 20px 42px rgba(103,61,230,.24)}
+.tool-section,.rules,.faq,.gate-guide-content{background:transparent}
+.tool-shell,.tool-sidebar,.editor,.results,.guide-copy,.rule-cards article,.faq-list{border-color:var(--line)}
+.tool-sidebar{background:#f9fbff}
+.dropzone:hover,.secondary:hover{background:var(--pale)}
+.controls input{accent-color:var(--blue)}
+.directory-nav{border-bottom-color:var(--line)}
+.directory-logo{border:0;background:var(--blue);color:#fff}
+.directory-logo{font-size:0;border-radius:9px}
+.directory-logo:after{content:'R';font:700 21px/1 'Sora',sans-serif;color:#fff}
+.directory-brand>span:last-child{font-size:0;line-height:1.05;text-align:left}
+.directory-brand>span:last-child:before{content:'ResizePhoto';display:block;font:700 12px/1 'Sora',sans-serif}
+.directory-brand>span:last-child:after{content:'.online';display:block;color:#673de6;font:700 12px/1 'Sora',sans-serif}
+.directory-brand{color:#5028c6}
+.directory-result{border-color:#d5c9fb;background:var(--pale);color:#3e2a83}
+.directory-hero{background:linear-gradient(118deg,#3e218f,#673de6)}
+.directory-home{background:#f7f9fc}
+.exam-card{border-color:var(--line);box-shadow:0 3px 7px rgba(30,61,101,.08)}
+.exam-card:hover{border-color:#83a9e6;box-shadow:0 8px 18px rgba(30,61,101,.14)}
+.exam-card.featured{border-color:#542bc4;background:linear-gradient(135deg,#4f2bb8,#673de6)}
+.group-heading{border-bottom-color:var(--line)}
+.footer-brand .brand-mark{background:#fff;color:var(--blue)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #b8a7f5;outline-offset:3px}

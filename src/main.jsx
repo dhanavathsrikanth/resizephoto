@@ -14,6 +14,7 @@ import './workflow-carousel.css';
 import './results-design.css';
 import './home-directory.css';
 import './home-state.css';
+import './shared-theme.css';
 import { LEGAL_PAGES, LEGAL_ORDER, LEGAL_PATHS, LEGAL_UPDATED, LEGAL_CONTACT } from './legal.jsx';
 
 const RULES = {
