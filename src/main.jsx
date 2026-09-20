@@ -25,12 +25,33 @@ const PRODUCTS = {
   compress: { name: 'Image compressor', eyebrow: 'Image · resize & compression', description: 'Resize, crop and export an image with settings you control.' }
 };
 
-const currentPath = window.location.pathname.split('/').filter(Boolean)[0] || 'gate';
+const currentPath = window.location.pathname.split('/').filter(Boolean)[0] || '';
 const legalKey = LEGAL_PAGES[currentPath] ? currentPath : null;
-const productKey = legalKey ? 'gate' : (PRODUCTS[currentPath] ? currentPath : 'gate');
+const isHome = !legalKey && currentPath === '';
+const productKey = (legalKey || isHome) ? 'gate' : (PRODUCTS[currentPath] ? currentPath : 'gate');
 const product = PRODUCTS[productKey];
 
 function formatBytes(bytes) { return `${Math.max(0.1, bytes / 1024).toFixed(1)} kB`; }
+
+function LandingPage() {
+  const tools = [
+    { name: 'GATE 2027', desc: 'Photo & signature resizer with IIT Madras checks.', href: '/gate', live: true },
+    { name: 'JEE', desc: 'Application photo & signature presets.', href: '/gate', live: false },
+    { name: 'NEET', desc: 'Application photo & signature presets.', href: '/gate', live: false },
+    { name: 'SSC', desc: 'Application photo & signature presets.', href: '/gate', live: false },
+    { name: 'UPSC', desc: 'Application photo & signature presets.', href: '/gate', live: false },
+    { name: 'Passport', desc: 'Clean passport-style photograph export.', href: '/gate', live: false },
+  ];
+  return <>
+    <header className="topbar"><a className="brand" href="/" aria-label="ResizePhoto.online home"><span className="brand-mark">R</span><span>ResizePhoto<br /><b>.online</b></span></a><nav aria-label="ResizePhoto.online"><a href="/gate">GATE 2027 tool</a><a href="#tools">All tools</a><a href="#how">How it works</a></nav><div className="nav-status"><span></span>Private & local</div><a className="nav-cta" href="/gate">Open resizer <span>→</span></a></header>
+    <main id="top">
+      <section className="hero"><div className="hero-copy"><p className="eyebrow"><span className="pulse"></span> Free exam image tools</p><h1>Exam photos,<br /><em>sized right.</em></h1><p className="hero-lede">Free browser-based photo and signature Resizers for GATE 2027 and more. Crop, resize and check your JPG against official pixels, ratio and file-size limits — locally, nothing uploaded.</p><div className="hero-actions"><a className="primary" href="/gate">Open GATE 2027 resizer <span>→</span></a><a className="secondary" href="#tools">Browse tools</a></div><p className="microcopy"><b>Private by default</b> · your image is processed locally and never uploaded.</p></div><div className="hero-card"><div className="card-label">Featured tool</div><div className="brief-row"><strong>EXAM</strong><span>GATE 2027</span></div><div className="brief-row"><strong>OUTPUT</strong><span>JPG · measurable checks</span></div><div className="rule-line"></div><p>Photo 200×260–530×690 px · Signature 250×80–580×180 px. Ratio and KB checks built in.</p><div className="stamp">GATE<br /><small>2027</small></div></div></section>
+      <section className="rules" id="tools"><div className="section-kicker">Tools <span>Pick yours</span></div><div className="rules-intro"><h2>One workspace<br /><em>per exam.</em></h2><p>Start with the live GATE 2027 tool. More exam presets are on the way — same private, browser-only engine.</p></div><div className="rule-cards">{tools.map(t => <article key={t.name}><span className="rule-num">{t.live ? 'LIVE' : 'SOON'}</span><h3>{t.name}</h3><p>{t.desc}</p><p><a className="secondary" href={t.href}>{t.live ? 'Open tool →' : 'Preview in GATE tool →'}</a></p></article>)}</div></section>
+      <section className="rules" id="how"><div className="section-kicker">How it works</div><div className="rules-intro"><h2>Three steps,<br /><em>two minutes.</em></h2><p>Your image stays in this browser. Frame it, check the measurable requirements, download a submission-ready JPG.</p></div><div className="rule-cards"><article><span className="rule-num">01</span><h3>Upload</h3><p>JPG, PNG or WebP up to 10 MB. Nothing is sent to a server.</p></article><article><span className="rule-num">02</span><h3>Crop & position</h3><p>Zoom, rotate and drag inside the exam frame.</p></article><article><span className="rule-num">03</span><h3>Check & download</h3><p>Review pixels, ratio and file size, then download the JPG.</p></article></div><div className="official-guidelines"><div className="section-kicker">Trust</div><h3>Private by design</h3><p>Local Canvas processing · No accounts · No uploads · Free forever. Read the <a href="/privacy">Privacy Policy</a>, <a href="/terms">Terms</a> and <a href="/disclaimer">Disclaimer</a> before submitting anywhere.</p><p className="official-source"><a href="/gate">Open the GATE 2027 resizer →</a></p></div></section>
+    </main>
+    <SiteFooter />
+  </>;
+}
 
 function SiteFooter() {
   return <footer><div className="footer-top"><div className="footer-brand"><span className="brand-mark">R</span><span>ResizePhoto<br /><b>.online</b></span></div><p>Prepare every application image with less guesswork.</p><div className="footer-private"><span></span> Runs locally in your browser</div></div><div className="footer-links"><div><strong>Tools</strong><a href="/gate#tool">GATE photograph</a><a href="/gate#tool">GATE signature</a><a href="/gate#rules">How it works</a></div><div><strong>Official guidance</strong><a href="https://gate2027.iitm.ac.in/photograph_and_signature" target="_blank" rel="noreferrer">GATE 2027 requirements ↗</a><a href="https://gate2027.iitm.ac.in/" target="_blank" rel="noreferrer">GATE 2027 home ↗</a></div><div><strong>More tools</strong><span>JEE · NEET · SSC</span><span>RRB · UPSC · Passport</span><span>More tools coming soon</span></div><div><strong>Legal</strong><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/disclaimer">Disclaimer</a><a href="/cookies">Cookie Policy</a></div></div><div className="footer-bottom"><small>© 2027 ResizePhoto.online · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/cookies">Cookies</a></small><small>Images are processed locally · Nothing is uploaded or stored</small></div></footer>;
@@ -81,6 +102,21 @@ function App() {
   // Never overwrites the GATE keyword title with a generic one.
   useEffect(() => {
     const SITE = 'https://resizephoto.online';
+    if (!legalKey && currentPath === '') {
+      const title = 'ResizePhoto.online — Free Photo & Signature Resizer for Exams';
+      const desc = 'ResizePhoto.online offers free browser-based photo and signature tools for GATE 2027 and more exams. Crop, resize and check JPG images locally — nothing is uploaded.';
+      document.title = title;
+      const setMeta = (sel, attr, val, content) => { let el = document.head.querySelector(sel); if (!el) { el = document.createElement('meta'); el.setAttribute(attr, val); document.head.appendChild(el); } el.setAttribute('content', content); };
+      setMeta('meta[name="description"]', 'name', 'description', desc);
+      setMeta('meta[property="og:title"]', 'property', 'og:title', title);
+      setMeta('meta[property="og:url"]', 'property', 'og:url', `${SITE}/`);
+      setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
+      setMeta('meta[name="robots"]', 'name', 'robots', 'index, follow');
+      let canon = document.head.querySelector('link[rel="canonical"]');
+      if (!canon) { canon = document.createElement('link'); canon.setAttribute('rel', 'canonical'); document.head.appendChild(canon); }
+      canon.setAttribute('href', `${SITE}/`);
+      return;
+    }
     if (legalKey && LEGAL_PAGES[legalKey]) {
       const page = LEGAL_PAGES[legalKey];
       document.title = page.title;
@@ -151,6 +187,7 @@ function App() {
 
   const allPass = metrics.length && metrics.every(item => item[2]);
   if (legalKey && LEGAL_PAGES[legalKey]) return <LegalPage pageKey={legalKey} />;
+  if (isHome) return <LandingPage />;
   return <>
     <header className="topbar"><a className="brand" href="/gate" aria-label="ResizePhoto.online home"><span className="brand-mark">R</span><span>ResizePhoto<br /><b>.online</b></span></a><nav aria-label="ResizePhoto.online"><a href="#tool">Image tool</a><a href="#rules">How it works</a><a href="https://gate2027.iitm.ac.in/photograph_and_signature" target="_blank" rel="noreferrer">Requirements ↗</a></nav><div className="nav-status"><span></span>Private & local</div><a className="nav-cta" href="#tool">Start adjusting <span>→</span></a></header>
     <main id="top">
