@@ -26,7 +26,8 @@ export const LEGAL_PAGES = {
         h: '2. Technical data our hosting may see automatically',
         p: [
           'Like every website, our host / CDN may log strictly technical data needed to deliver pages securely: IP address, browser type, requested URL, timestamp, and basic error logs. We do not combine these logs with your images (which we never receive).',
-          'These logs are kept only as long as needed for security, abuse prevention, and reliability, then rotated or deleted by the provider.',
+          'These logs are kept only as long as needed for security, abuse prevention, and reliability — typically 30–90 days depending on the provider — then rotated or deleted automatically.',
+          'We do not build profiles, run behavioural advertising, or share log data with data brokers.',
         ],
       },
       {
@@ -40,14 +41,17 @@ export const LEGAL_PAGES = {
         h: '4. How we use information (limited purpose)',
         p: [
           'Operate the free tool, keep it secure, fix bugs, and comply with the law. Nothing else.',
+          'Lawful basis: your consent when you choose to use the tool, plus our legitimate interest in operating a secure, functional website. You may stop using the tool at any time — since nothing is uploaded, simply closing the tab ends all processing on our side.',
           'We never sell personal data, never share images (we have none), and never use your photos to train models.',
+          'There are no accounts, subscriptions, or payments, so we hold no billing or financial data of any kind.',
         ],
       },
       {
         h: '5. Your rights (India — DPDP Act 2023, plus GDPR where it applies)',
         p: [
-          'Access, correction, erasure, and withdrawal of consent for any personal data we actually hold (which is minimal — see section 2).',
-          'Grievance redressal: email contact@resizephoto.online with subject “Privacy request”. We aim to respond within 7 working days and resolve within timelines required by applicable law.',
+          'Access, correction, erasure, nomination, and withdrawal of consent for any personal data we actually hold (which is minimal — see section 2). Because images never reach us, there is nothing to delete on our servers; clearing your browser site data removes any local remainder.',
+          'Grievance redressal (DPDP Act 2023): email contact@resizephoto.online with subject “Privacy request” or “Grievance”. This address also serves as our grievance contact. We acknowledge requests promptly, aim to respond within 7 working days, and resolve them within the timelines required by applicable law.',
+          'To help us act quickly, describe your request and the approximate date/time of your visit. Please never send identity documents or photographs by email.',
           'If you are in the EU/UK, you may also lodge a complaint with your local supervisory authority.',
         ],
       },
@@ -165,8 +169,37 @@ export const LEGAL_PAGES = {
         ],
       },
       {
-        h: '11. Contact',
-        p: ['For Terms queries: contact@resizephoto.online.'],
+        h: '11. Free service; no payments or refunds',
+        p: [
+          'The tool is completely free. There are no fees, subscriptions, trials, or in-app purchases, and therefore no refunds, chargebacks, or billing disputes can arise.',
+          'We will never ask you for payment details, OTPs, or passwords. Anyone requesting money in our name is impersonating us — do not pay and report it to contact@resizephoto.online.',
+        ],
+      },
+      {
+        h: '12. Eligibility',
+        p: [
+          'You must have the legal capacity to enter these Terms in your jurisdiction. If you are under 18, you may use the service only with the involvement of a parent or guardian who accepts these Terms on your behalf.',
+        ],
+      },
+      {
+        h: '13. Copyright and trademark complaints',
+        p: [
+          'If you believe content on this site infringes your copyright or trademark, email contact@resizephoto.online with subject “IP complaint”, identifying the material, your rights, and your contact details.',
+          'We respect valid rights and will act expeditiously on complete complaints under the Information Technology Act, 2000 (India) and applicable safe-harbour frameworks, including removing or disabling access where appropriate. Knowingly false complaints may carry legal consequences — please verify before reporting.',
+        ],
+      },
+      {
+        h: '14. General legal terms',
+        p: [
+          'Severability: if any part of these Terms is held unenforceable, the remainder continues in full effect and the unenforceable part is read down to the minimum extent needed to make it enforceable.',
+          'Waiver: failing to enforce a provision once does not waive our right to enforce it later.',
+          'Assignment: you may not transfer your rights under these Terms without our written consent; we may assign ours in connection with operating or transferring the service.',
+          'Entire agreement: these Terms, together with the Privacy Policy, Cookie Policy, and Disclaimer, are the entire agreement between you and ResizePhoto.online for the service.',
+        ],
+      },
+      {
+        h: '15. Contact',
+        p: ['For Terms queries: contact@resizephoto.online. Please do not send identity documents by email.'],
       },
     ],
   },
@@ -181,7 +214,8 @@ export const LEGAL_PAGES = {
       {
         h: '1. Not affiliated with GATE or IIT Madras',
         p: [
-          'ResizePhoto.online is independent and unaffiliated. GATE and related marks belong to their owners. Official rules are published only at gate2027.iitm.ac.in.',
+          'ResizePhoto.online is independent and unaffiliated. It is not endorsed, sponsored, or approved by GATE, IIT Madras, or any government body.',
+          'GATE and related marks belong to their owners. References to them here are nominative only — to identify which published requirements the tool helps you check.',
         ],
       },
       {
@@ -217,6 +251,13 @@ export const LEGAL_PAGES = {
           'Links to gate2027.iitm.ac.in and similar sources are provided for verification. We do not control those sites and are not responsible for their content, availability, or policies.',
         ],
       },
+      {
+        h: '7. Accuracy efforts and error reports',
+        p: [
+          'We make reasonable efforts to keep the built-in values aligned with the official notice, but errors and outdated values are possible. If you spot a mismatch with the official instructions, please tell us at contact@resizephoto.online with subject “Requirement correction” and a link to the official page — it helps every applicant.',
+          'A correction report does not create an obligation or timeline, but we review all such reports in good faith.',
+        ],
+      },
     ],
   },
 
@@ -246,6 +287,7 @@ export const LEGAL_PAGES = {
         h: '3. Managing cookies',
         p: [
           'Use your browser settings to block or delete cookies and site data at any time. Because we do not depend on persistent cookies, blocking them will not break the core resizer.',
+          'We honour Do Not Track and Global Privacy Control signals to the extent technically applicable — though there is little to opt out of, since we set no tracking cookies in the first place.',
           'To fully clear local state: close the tab, or clear site data for resizephoto.online in your browser.',
         ],
       },
