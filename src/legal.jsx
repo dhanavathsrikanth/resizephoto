@@ -19,7 +19,7 @@ export const LEGAL_PAGES = {
         p: [
           'Images you choose stay in your browser memory (Object URLs + Canvas). They are never sent to our servers because there is no upload endpoint, no account, and no server-side image storage.',
           'We do not ask for your name, email, phone, address, or exam registration details to use the tool.',
-          'We do not run advertising trackers, fingerprinting scripts, or cross-site analytics on the tool itself. If we add analytics later, this policy will be updated before it is enabled.',
+          'We use Simple Analytics (scripts.simpleanalyticscdn.com) for privacy-first, aggregate pageview counts. It is cookieless and does not collect personal data or track you across sites. We do not run advertising trackers or fingerprinting scripts.',
         ],
       },
       {
@@ -32,7 +32,7 @@ export const LEGAL_PAGES = {
       {
         h: '3. No cookies for tracking',
         p: [
-          'We do not set first-party advertising or analytics cookies. See our Cookie Policy for the full list.',
+          'We do not set first-party advertising or analytics cookies. Our only analytics is Simple Analytics, which is cookieless — see our Cookie Policy for details.',
           'Your browser may keep temporary in-memory data (for example preview URLs) only until you close or refresh the tab. Clearing site data removes anything left locally.',
         ],
       },
@@ -224,21 +224,22 @@ export const LEGAL_PAGES = {
     nav: 'Cookie Policy',
     title: 'Cookie Policy — ResizePhoto.online',
     heading: 'Cookie Policy',
-    intro:
-      'Short version: we do not use advertising or analytics cookies. The tool works without tracking you.',
+      intro:
+      'Short version: we do not use advertising or tracking cookies. We count aggregate pageviews with cookieless Simple Analytics — nothing that follows you.',
     sections: [
       {
         h: '1. What we set',
         p: [
           'Strictly necessary operation only: temporary in-browser data (such as preview object URLs and UI state like photo/signature mode) needed to show your crop and export a JPG. This lives in memory for the tab session and is not sent to us.',
-          'No first-party analytics, advertising, social-media, or personalisation cookies.',
+          'Privacy-first analytics: Simple Analytics (scripts.simpleanalyticscdn.com) counts aggregate pageviews without cookies, without personal data, and without cross-site tracking.',
+          'No advertising, social-media, or personalisation cookies.',
         ],
       },
       {
         h: '2. What third parties might set',
         p: [
           'Our host / CDN may apply standard security and load-balancing mechanisms (which sometimes use short-lived technical cookies or logs) to deliver pages safely. We do not control or read those beyond operating the site.',
-          'Fonts are loaded from Google Fonts, which may process technical request data under Google’s own policies. Blocking third-party requests may change typography but the tool still works.',
+          'Fonts are loaded from Google Fonts and analytics from Simple Analytics CDN, which may process technical request data (such as IP address) to deliver those files, under their own policies. Blocking third-party requests may change typography or disable pageview counts, but the tool still works.',
         ],
       },
       {
@@ -251,7 +252,7 @@ export const LEGAL_PAGES = {
       {
         h: '4. Changes and contact',
         p: [
-          'If we ever add consent-based analytics, we will update this policy and ask for consent where required before enabling it.',
+          'If we ever add cookie-based or consent-based analytics, we will update this policy and ask for consent where required before enabling it.',
           'Questions: contact@resizephoto.online.',
         ],
       },
