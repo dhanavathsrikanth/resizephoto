@@ -1,8 +1,8 @@
 {
-  "name": "ResizePhoto.online — GATE 2027 Photo & Signature Resizer",
+  "name": "ResizePhoto.online — Exam Photo & Signature Resizer",
   "short_name": "ResizePhoto",
-  "description": "Free browser-based photo and signature resizer for JPG dimensions, aspect ratio and KB checks.",
-  "start_url": "/gate",
+  "description": "Free exam photo and signature resizer: GATE 2027 and UPSC JPG size, pixel and format checks, processed locally.",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",

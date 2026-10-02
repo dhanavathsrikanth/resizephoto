@@ -14,10 +14,10 @@ if (!existsSync(src)) {
   process.exit(0);
 }
 
-for (const route of ['gate', 'privacy', 'terms', 'disclaimer', 'cookies']) {
+for (const route of ['gate', 'upsc', 'privacy', 'terms', 'disclaimer', 'cookies']) {
   const dir = join(dist, route);
   mkdirSync(dir, { recursive: true });
   cpSync(src, join(dir, 'index.html'));
 }
 
-console.log('[copy-routes] route copies written: gate, privacy, terms, disclaimer, cookies');
+console.log('[copy-routes] route copies written: gate, upsc, privacy, terms, disclaimer, cookies');

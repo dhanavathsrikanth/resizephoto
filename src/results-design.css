@@ -38,3 +38,5 @@ h1,h2,h3,h4,h5,h6,.brand,.nav-cta,.primary,.secondary,.download,.render-button,.
   .tool-shell:has(.results) .results-title h3:after{font-size:25px}
   .tool-shell:has(.results) .results:after{right:18px;top:20px;width:36px;height:36px;font-size:18px}
 }
+html[data-exam='upsc'] .tool-shell:has(.results) .results-title h3:after{content:'UPSC requirements passed'}
+html[data-exam='upsc'] .tool-shell:has(.results) .results-title>div:after{content:'UPSC measurable checks · ready to download'}
